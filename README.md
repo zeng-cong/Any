@@ -1,5 +1,9 @@
 # Any
-the class is a container that can wrap any type in c++
+the class is a container that can wrap any type in c++  
+
+like c++17 std::any  
+
+but the class can use in c++11
 
 # example
 ```
