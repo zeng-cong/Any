@@ -1,11 +1,19 @@
 #ifndef _ANY_H
 #define _ANY_H
-#include "Utility/UtilMacro.h"
 #include <exception>
 #include <iostream>
 #include <type_traits>
 #include <typeinfo>
 #include <utility>
+#define SAFE_DELETE(x)                                                                                                 \
+    do                                                                                                                 \
+    {                                                                                                                  \
+        if (x)                                                                                                         \
+            delete x;                                                                                                  \
+        x = nullptr;                                                                                                   \
+    } while (false);
+
+#define rmref(T) typename std::remove_reference<T>::type
 class CastException : public std::exception
 {
   private:
